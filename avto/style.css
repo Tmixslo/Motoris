@@ -1,0 +1,296 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+/* GLAVA */
+
+header {
+    background: #606fa5;
+    min-height: 150px;
+    padding: 25px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 43px;
+    letter-spacing: 2px;
+}
+
+.simbol {
+    color: black;
+    font-size: 75px;
+    font-weight: bold;
+}
+
+/* MENI */
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d5dcff;
+}
+
+/* GLAVNA SLIKA */
+
+.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(rgba(20, 30, 65, 0.25),
+        rgba(20, 30, 65, 0.45)),
+        url("avtomobili.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 50px;
+}
+
+.hero-content {
+    background: rgba(50, 63, 112, 0.78);
+    color: white;
+    padding: 45px;
+    max-width: 520px;
+    text-align: right;
+    border-radius: 8px;
+}
+
+.hero-content h2 {
+    font-size: 43px;
+    line-height: 1.4;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* NASLOVI PODSTRANI */
+
+.naslov {
+    background: #606fa5;
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.naslov h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.naslov p {
+    font-size: 19px;
+}
+
+/* VSEBINA */
+
+.vsebina {
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.vsebina img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 10px;
+}
+
+.besedilo {
+    flex: 1;
+    min-width: 270px;
+    line-height: 1.8;
+}
+
+.besedilo h2 {
+    color: #606fa5;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* KARTICE */
+
+.kartice {
+    max-width: 1150px;
+    margin: 45px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.kartica {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.kartica:hover {
+    transform: translateY(-5px);
+}
+
+.kartica img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+.kartica h3 {
+    color: #606fa5;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.kartica p {
+    line-height: 1.7;
+}
+
+/* GUMBI */
+
+.btn {
+    display: inline-block;
+    background: #606fa5;
+    color: white;
+    padding: 14px 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #394879;
+}
+
+/* KONTAKTNI OBRAZEC */
+
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+}
+
+form h2 {
+    color: #606fa5;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+}
+
+button {
+    background: #606fa5;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* NOGA */
+
+footer {
+    background: #303e70;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+/* MOBILNE NAPRAVE */
+
+@media(max-width: 800px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .logo h1 {
+        font-size: 32px;
+    }
+
+    .hero {
+        min-height: 480px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .naslov h2 {
+        font-size: 30px;
+    }
+
+    .vsebina {
+        text-align: center;
+    }
+}
