@@ -1,0 +1,67 @@
+CREATE DATABASE avto;
+USE avto;
+
+CREATE TABLE Znamka (
+    id_znamka INT(10) AUTO_INCREMENT PRIMARY KEY,
+    naziv VARCHAR(50)
+);
+
+CREATE TABLE Kategorija (
+    id_kategorija INT(10) AUTO_INCREMENT PRIMARY KEY,
+    naziv VARCHAR(70)
+);
+
+CREATE TABLE Stranka (
+    id_stranka INT(10) AUTO_INCREMENT PRIMARY KEY,
+    ime VARCHAR(50),
+    priimek VARCHAR(50),
+    email VARCHAR(80),
+    telefon INT(10)
+);
+
+CREATE TABLE Vozilo (
+    id_vozilo INT(10) AUTO_INCREMENT PRIMARY KEY,
+    model VARCHAR(70),
+    cena DECIMAL(7,2),
+    kilometri INT(10),
+    gorivo VARCHAR(255),
+    stanje VARCHAR(50),
+    Znamkaid_znamka INT(10),
+    Kategorijaid_kategorija INT(10),
+
+    FOREIGN KEY (Znamkaid_znamka)
+        REFERENCES Znamka(id_znamka),
+
+    FOREIGN KEY (Kategorijaid_kategorija)
+        REFERENCES Kategorija(id_kategorija)
+);
+
+CREATE TABLE Povprasevanje (
+    id_popravljanje INT(10) AUTO_INCREMENT PRIMARY KEY,
+    sporocilo VARCHAR(255),
+    datum DATE,
+    Voziloid_vozilo INT(10),
+    Strankaid_stranka INT(10),
+
+    FOREIGN KEY (Voziloid_vozilo)
+        REFERENCES Vozilo(id_vozilo),
+
+    FOREIGN KEY (Strankaid_stranka)
+        REFERENCES Stranka(id_stranka)
+);
+
+CREATE TABLE Servis (
+    id_servis INT(10) AUTO_INCREMENT PRIMARY KEY,
+    storitev VARCHAR(100),
+    cena DECIMAL(7,2),
+    status VARCHAR(50),
+    datum DATE,
+    Strankaid_stranka INT(10),
+    Voziloid_vozilo INT(10),
+
+    FOREIGN KEY (Strankaid_stranka)
+        REFERENCES Stranka(id_stranka),
+
+    FOREIGN KEY (Voziloid_vozilo)
+        REFERENCES Vozilo(id_vozilo)
+);
